@@ -3,261 +3,332 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alashi Teacher Toolkit · Free tools and strategies for every teacher</title>
-<meta name="description" content="Free, practical tools and research-informed strategies for teachers of every subject: AI for teachers, checking understanding, behaviour, inclusion and workload.">
+<meta name="color-scheme" content="light dark">
+<title>Alashi Teacher Toolkit · Free tools and guides for every teacher</title>
+<meta name="description" content="What do you need help with today? Free tools and research-informed guides for teachers of every subject: AI, checking understanding, behaviour, inclusion and workload.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://abdulhamidalashi.github.io/">
+<meta property="og:title" content="Alashi Teacher Toolkit">
+<meta property="og:description" content="Teach smarter, not longer. Free tools and guides for every teacher.">
 <meta property="og:image" content="https://abdulhamidalashi.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:title" content="Alashi Teacher Toolkit">
-<meta property="og:description" content="Free tools and strategies for every teacher, every subject.">
+<link rel="icon" href="avatar-small.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0F2742;--ground:#F6F7FB;--amber:#F2A541;--amber-dark:#8A5A00;--amber-num:#B86E00;--muted:#51627A;--soft:#B9C6D8;--line:#DCE2EC;--green:#147A52}
+:root{
+ --bg:#FFFFFF;--surface:#F5F5F7;--card:#FFFFFF;--ink:#1D1D1F;--ink2:#515154;--line:#E3E3E8;
+ --accent:#4B32D6;--accent-hi:#3A23B8;--accent-soft:#EEEAFB;--pink:#B5307E;
+ --chip:#F0F0F3;--chip-on:#1D1D1F;--chip-on-ink:#FFFFFF;--shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(29,29,31,.06);
+ --grad:linear-gradient(90deg,#4B32D6 0%,#8B2FC9 50%,#C2307A 100%);
+}
+@media (prefers-color-scheme:dark){:root{
+ --bg:#0F0F12;--surface:#18181C;--card:#18181C;--ink:#F5F5F7;--ink2:#B4B4BB;--line:#2A2A31;
+ --accent:#A99BFF;--accent-hi:#C2B8FF;--accent-soft:#25203F;--pink:#FF8FCB;
+ --chip:#222228;--chip-on:#F5F5F7;--chip-on-ink:#0F0F12;--shadow:none;
+ --grad:linear-gradient(90deg,#A99BFF 0%,#D08CFF 50%,#FF8FCB 100%);
+}}
 *{box-sizing:border-box}
+img{max-width:100%;height:auto}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--navy);background:var(--ground);line-height:1.55;font-size:18px}
-h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.1;margin:0}
-a{color:var(--navy)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:#fff;padding:8px 12px;z-index:9}
-.nav{background:var(--navy);color:#fff}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:20px;min-height:44px}
-.brand img{width:44px;height:44px;border-radius:50%;border:3px solid var(--amber);object-fit:cover}
-.nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0;flex-wrap:wrap}
-.nav ul a{color:#fff;text-decoration:none;font-weight:500;padding:10px 14px;border-radius:999px;display:inline-block;min-height:44px}
-.nav ul a:hover{background:rgba(255,255,255,.1)}
-.hero{background:var(--navy);color:#fff;padding:56px 0 88px}
-.kicker{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--amber);color:var(--amber);border-radius:999px;padding:8px 18px;font-weight:700;letter-spacing:2px;font-size:14px}
-.hero h1{font-size:clamp(40px,6vw,72px);letter-spacing:-1px;margin:24px 0 20px;max-width:900px}
-.hero h1 span{color:var(--amber)}
-.hero p{font-size:20px;color:#E3E9F2;max-width:720px;margin:0 0 32px}
-.btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:17px}
-.btn-primary{background:var(--amber);color:var(--navy)}.btn-primary:hover{background:#ffbb63}
-.btn-ghost{border:2px solid #fff;color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.1)}
-.btn-dark{background:var(--navy);color:#fff}.btn-dark:hover{background:#1b3a5f}
-.btn-line{border:2px solid var(--navy);color:var(--navy)}.btn-line:hover{background:#EEF1F7}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;padding:0;list-style:none}
-.chips li{background:rgba(255,255,255,.08);border-radius:999px;padding:8px 16px;font-size:16px;color:#E3E9F2}
-section{padding:80px 0}
-.label{font-weight:700;letter-spacing:3px;font-size:14px;color:var(--amber-dark);margin-bottom:12px}
-.sec-h{font-size:clamp(32px,4vw,48px);margin-bottom:14px}
-.sec-p{color:var(--muted);max-width:740px;margin:0 0 40px;font-size:19px}
-.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
-.card{background:#fff;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line)}
-.card h3{font-size:25px}
-.card p{margin:0;color:var(--muted)}
-.card .btn{align-self:flex-start;margin-top:auto}
-.icon{width:56px;height:56px;border-radius:16px;background:var(--navy);color:var(--amber);display:flex;align-items:center;justify-content:center}
-.icon svg{width:30px;height:30px}
-.tag{align-self:flex-start;font-size:14px;font-weight:700;letter-spacing:1px;padding:6px 12px;border-radius:999px;background:#EEF1F7;color:var(--navy)}
-.tag.live{background:var(--navy);color:var(--amber)}
-.inside{margin:0;padding-left:20px;color:var(--navy);font-size:17px}
-.inside li{margin:3px 0}
-.evidence{margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 24px;font-size:16px;color:var(--muted)}
-.evidence a{color:var(--navy)}
-.thumb{border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:var(--navy)}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.num{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:56px;line-height:.9;color:var(--amber-num)}
-.hashtag{margin-top:32px;background:var(--navy);color:#fff;border-radius:24px;padding:28px 32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
-.hashtag b{font-family:"Space Grotesk",sans-serif;font-size:26px;color:var(--amber)}
-.ask{background:var(--navy);color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-.ask h2{font-size:clamp(28px,3.5vw,40px);margin-bottom:10px}
-.ask p{margin:0;color:#E3E9F2}
-.about{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
-.about img{width:100%;max-width:280px;border-radius:24px;border:4px solid var(--amber);display:block}
-.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:28px}
-.fact{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px}
-.fact b{display:block;font-size:14px;letter-spacing:2px;color:var(--amber-dark);margin-bottom:6px}
-ul.clean{margin:0;padding-left:20px}ul.clean li{margin:4px 0}
-footer{background:var(--navy);color:var(--soft);padding:40px 0}
-footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
-footer a{color:#fff;display:inline-block;padding:12px 0}
-@media (max-width:760px){.about,.ask{grid-template-columns:1fr}.about img{max-width:200px}section{padding:56px 0}.hero{padding:40px 0 64px}.ask{padding:28px}}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;letter-spacing:-.025em;line-height:1.08;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--bg);padding:8px 12px;z-index:99}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:58px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;min-height:44px}
+.brand img{width:30px;height:30px;border-radius:50%}
+.nav ul{list-style:none;display:flex;gap:2px;margin:0;padding:0;align-items:center}
+.nav ul a{color:var(--ink);text-decoration:none;font-size:14px;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;opacity:.85}
+.nav ul a:hover{opacity:1}
+.nav ul a.pill{background:var(--ink);color:var(--bg);border-radius:999px;min-height:36px;padding:0 16px;margin-left:6px;opacity:1;font-weight:600}
+
+/* hero (Google / ChatGPT pattern) */
+.hero{text-align:center;padding:72px 0 28px}
+.ring{width:84px;height:84px;border-radius:50%;padding:3px;background:var(--grad);margin:0 auto 22px}
+.ring img{width:100%;height:100%;border-radius:50%;border:3px solid var(--bg);display:block;object-fit:cover}
+.hero h1{font-size:clamp(38px,6.4vw,72px);font-weight:800;letter-spacing:-.035em;max-width:880px;margin:0 auto 14px}
+.hero .sub{color:var(--ink2);font-size:clamp(18px,2vw,21px);max-width:620px;margin:0 auto 34px}
+.search{max-width:720px;margin:0 auto;position:relative}
+.search input{width:100%;height:62px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:18px;padding:0 64px 0 58px;box-shadow:var(--shadow);transition:box-shadow .2s,border-color .2s}
+.search input::placeholder{color:var(--ink2)}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.search .mag{position:absolute;left:22px;top:50%;transform:translateY(-50%);width:22px;height:22px;color:var(--ink2);pointer-events:none}
+.search .clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:transparent;color:var(--ink2);cursor:pointer;display:none}
+.search .clear.show{display:block}
+.search .clear:hover{background:var(--chip)}
+
+/* chips (YouTube pattern) */
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px auto 0;padding:0;list-style:none;max-width:900px}
+.chip{border:0;font:inherit;font-size:15px;white-space:nowrap;font-weight:600;min-height:40px;padding:0 16px;border-radius:10px;background:var(--chip);color:var(--ink);cursor:pointer;transition:background .15s}
+.chip:hover{background:color-mix(in srgb,var(--chip) 80%,var(--ink) 8%)}
+.chip[aria-pressed="true"]{background:var(--chip-on);color:var(--chip-on-ink)}
+
+/* library grid (YouTube pattern) */
+.library{padding:44px 0 96px}
+.lib-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.lib-head h2{font-size:28px;font-weight:700}
+.count{color:var(--ink2);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 22px}
+.card{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;border-radius:18px}
+.card:focus-visible{outline:3px solid var(--accent);outline-offset:6px}
+.thumb{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--surface)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.card:hover .thumb img{transform:scale(1.035)}
+.badge{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.78);color:#fff;font-size:14px;font-weight:600;padding:4px 9px;border-radius:7px;letter-spacing:.02em}
+.badge.new{left:10px;right:auto;background:#fff;color:#1D1D1F}
+.soon-thumb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-soft) 60%,var(--surface)))}
+.soon-thumb svg{width:64px;height:64px;color:var(--accent);opacity:.9}
+.meta{display:flex;gap:12px;align-items:flex-start}
+.meta img{width:36px;height:36px;border-radius:50%;flex-shrink:0;margin-top:2px}
+.meta h3{font-family:Inter,sans-serif;font-size:17px;font-weight:600;letter-spacing:0;line-height:1.35;margin-bottom:4px}
+.meta p{color:var(--ink2);font-size:14px;line-height:1.45}
+.card.soon h3{color:var(--ink2)}
+.empty{display:none;text-align:center;padding:48px 20px;background:var(--surface);border-radius:24px}
+.empty.show{display:block}
+.empty h3{font-size:26px;margin-bottom:8px}
+.empty p{color:var(--ink2);margin-bottom:20px}
+
+/* buttons */
+.btns{display:flex;gap:22px;flex-wrap:wrap;align-items:center;justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;font-weight:600;text-decoration:none;font-size:17px;background:var(--accent);color:#fff}
+.btn:hover{background:var(--accent-hi)}
+@media (prefers-color-scheme:dark){.btn{color:#0F0F12}}
+.btn.light{background:#fff;color:#1D1D1F}.btn.light:hover{background:#E8E8ED}
+.link{color:var(--accent);text-decoration:none;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+.link:hover{text-decoration:underline}
+
+/* tool band (Apple pattern) */
+.band{background:#000;color:#F5F5F7;padding:100px 0}
+.band .head{text-align:center;max-width:760px;margin:0 auto 48px}
+.band .eyebrow{color:#FF8FCB;font-weight:600;margin-bottom:12px}
+.band h2{font-size:clamp(36px,5.2vw,60px);font-weight:800;margin-bottom:14px}
+.band h2 span{background:linear-gradient(90deg,#A99BFF,#FF8FCB);-webkit-background-clip:text;background-clip:text;color:transparent}
+.band .head p{color:#A1A1A6;font-size:20px}
+.band .link{color:#B6A9FF}
+.shot{max-width:980px;margin:0 auto;border-radius:26px;overflow:hidden;background:#fff;padding:16px;box-shadow:0 30px 90px rgba(139,47,201,.35)}
+.shot img{display:block;width:100%;border-radius:12px}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:980px;margin:52px auto 0}
+.points h3{font-size:21px;margin-bottom:6px;color:#fff}
+.points p{color:#A1A1A6;font-size:16px}
+
+/* ask */
+.ask{padding:100px 0 0}
+.ask .box{background:var(--surface);border-radius:32px;padding:68px 28px;text-align:center}
+.ask h2{font-size:clamp(34px,4.8vw,54px);font-weight:800;margin-bottom:12px}
+.ask p{font-size:19px;color:var(--ink2);max-width:580px;margin:0 auto 28px}
+
+
+/* photos */
+.photos{padding:100px 0 0}
+.photos .head{text-align:center;max-width:720px;margin:0 auto 44px}
+.photos .eyebrow{color:var(--pink);font-weight:600;margin-bottom:10px}
+.photos h2{font-size:clamp(34px,4.8vw,54px);font-weight:800;margin-bottom:12px}
+.photos .head p{font-size:19px;color:var(--ink2)}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;list-style:none;margin:0;padding:0}
+.strip figure{margin:0}
+.strip .ph{border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--surface);outline:1px solid var(--line);outline-offset:-1px}
+.strip img{width:100%;height:100%;object-fit:cover;display:block}
+.strip figcaption{font-size:16px;font-weight:600;margin-top:12px}
+.strip figcaption span{display:block;font-weight:400;color:var(--ink2);font-size:15px;margin-top:2px}
+
+/* about */
+.about{padding:100px 0}
+.about .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
+.portrait{border-radius:32px;overflow:hidden;aspect-ratio:1/1;background:var(--surface)}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.about .eyebrow{color:var(--pink);font-weight:600;margin-bottom:10px}
+.about h2{font-size:clamp(34px,4.4vw,54px);font-weight:800;margin-bottom:16px}
+.about .lead{font-size:20px;color:var(--ink2);margin-bottom:26px}
+.facts{list-style:none;margin:0 0 28px;padding:0;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:124px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
+.facts span{color:var(--ink2);font-size:14px;font-weight:600;padding-top:2px}
+.about .btns{justify-content:flex-start}
+
+footer{border-top:1px solid var(--line);color:var(--ink2);font-size:14px;padding:22px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+footer a{color:var(--ink2);display:inline-block;padding:12px 0}
+.sources{font-size:14px;color:var(--ink2);text-align:center;margin-top:36px}
+.sources a{color:var(--ink2)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.thumb img{transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.about .wrap{grid-template-columns:1fr;gap:34px}.portrait{max-width:420px}.points{grid-template-columns:1fr}.strip{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){
+ .nav ul a:not(.pill){display:none}
+ .grid{grid-template-columns:1fr;gap:28px}
+ .hero{padding-top:44px}
+ .chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:2px 22px 6px;margin:22px -22px 0;scrollbar-width:none}
+ .chips::-webkit-scrollbar{display:none}
+ .chip{flex-shrink:0}
+ .band,.about{padding:72px 0}.ask,.photos{padding-top:72px}
+ .strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:22px;gap:16px;margin:0 -22px;padding:0 22px 8px;scrollbar-width:none}
+ .strip::-webkit-scrollbar{display:none}
+ .strip li{flex:0 0 78%;scroll-snap-align:start}
+ .facts li{grid-template-columns:1fr;gap:2px}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav">
 <div class="wrap">
-<a class="brand" href="#top"><img src="avatar-small.jpg" alt="" width="44" height="44">Alashi Teacher Toolkit</a>
+<a class="brand" href="#top"><img src="avatar-small.jpg" alt="" width="30" height="30">Alashi Teacher Toolkit</a>
 <nav aria-label="Main"><ul>
-<li><a href="#support">Support areas</a></li>
-<li><a href="#toolkit">Toolkit</a></li>
-<li><a href="#tools">Free tools</a></li>
+<li><a href="#library">Library</a></li>
+<li><a href="#tool">Free tool</a></li>
 <li><a href="#about">About</a></li>
+<li><a class="pill" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Follow</a></li>
 </ul></nav>
 </div>
 </header>
 
 <main id="main">
-<div class="hero" id="top">
+<section class="hero" id="top">
 <div class="wrap">
-<span class="kicker">FREE FOR TEACHERS · EVERY SUBJECT</span>
-<h1>Teach smarter, not longer. <span>Free tools for every teacher.</span></h1>
-<p>Practical, research-informed strategies and simple classroom tools for teachers of any subject, from AI to assessment to behaviour. Built by a teacher, for teachers.</p>
-<div class="btns">
-<a class="btn btn-primary" href="#support">Find support</a>
-<a class="btn btn-ghost" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Follow on LinkedIn</a>
-</div>
-<ul class="chips" aria-label="Areas covered">
-<li>AI for teachers</li><li>Checking understanding</li><li>Behaviour</li><li>Inclusion &amp; SEN</li><li>Workload</li>
+<div class="ring"><img src="avatar-small.jpg" alt="Abdulhamid Alashi" width="84" height="84"></div>
+<h1>What do you need help with <span class="grad">today?</span></h1>
+<p class="sub">Free tools and research-informed guides for every teacher, in every subject.</p>
+<form class="search" role="search" onsubmit="return false">
+<label for="q" class="sr">Search the toolkit</label>
+<svg class="mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<input id="q" type="search" autocomplete="off" placeholder="Search: AI, feedback, behaviour…">
+<button type="button" class="clear" id="clear" aria-label="Clear search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</form>
+<ul class="chips" aria-label="Filter by topic">
+<li><button class="chip" type="button" data-cat="all" aria-pressed="true">All</button></li>
+<li><button class="chip" type="button" data-cat="ai" aria-pressed="false">AI for teachers</button></li>
+<li><button class="chip" type="button" data-cat="check" aria-pressed="false">Checking understanding</button></li>
+<li><button class="chip" type="button" data-cat="behaviour" aria-pressed="false">Behaviour</button></li>
+<li><button class="chip" type="button" data-cat="sen" aria-pressed="false">Inclusion &amp; SEN</button></li>
+<li><button class="chip" type="button" data-cat="workload" aria-pressed="false">Workload</button></li>
 </ul>
 </div>
-</div>
+</section>
 
-<section id="support">
+<section class="library" id="library">
 <div class="wrap">
-<div class="label">WHERE TEACHERS NEED SUPPORT</div>
-<h2 class="sec-h">Five areas teachers ask for most.</h2>
-<p class="sec-p">Chosen from international teacher surveys, not guesswork. Each area grows week by week with guides and tools you can use in any subject.</p>
-<div class="grid">
+<div class="lib-head"><h2>Library</h2><span class="count" id="count" aria-live="polite"></span></div>
+<div class="grid" id="grid">
 
-<article class="card">
-<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"></path><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"></path></svg></div>
-<span class="tag live">AVAILABLE</span>
-<h3>AI for teachers</h3>
-<p>Use AI safely to plan, differentiate and give feedback, with checks that keep you in control.</p>
-<ul class="inside"><li>5 AI prompts for planning (Toolkit #1)</li><li>Coming: AI prompt library by subject</li></ul>
-<a class="btn btn-line" href="#toolkit">See the guide</a>
-</article>
+<a class="card" href="cold-call.html" data-cat="check" data-k="cold call picker name random timer think time questioning participation everyone hands up">
+<div class="thumb"><img src="thumb-coldcall.jpg" alt="" width="800" height="450"><span class="badge new">NEW</span><span class="badge">FREE TOOL</span></div>
+<div class="meta"><img src="avatar-small.jpg" alt="" width="36" height="36"><div><h3>Cold Call picker + think timer</h3><p>Free tool · Any subject · Opens in your browser</p></div></div>
+</a>
 
-<article class="card">
-<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
-<span class="tag live">AVAILABLE</span>
-<h3>Checking understanding</h3>
-<p>See what every student knows, not just the few with hands up, and act on it in the lesson.</p>
-<ul class="inside"><li>5 ways to check understanding (Toolkit #2)</li><li>Cold Call picker + think timer</li></ul>
-<a class="btn btn-line" href="#tools">Open the tool</a>
-</article>
+<a class="card" href="teacher-toolkit-01-ai-prompts.pdf" download data-cat="ai" data-k="ai prompts chatgpt gemini claude planning lesson plan differentiation retrieval worked examples feedback mark scheme misconceptions">
+<div class="thumb"><img src="thumb-tt01.jpg" alt="" width="800" height="450"><span class="badge">PDF · 8 pages</span></div>
+<div class="meta"><img src="avatar-small.jpg" alt="" width="36" height="36"><div><h3>5 AI prompts that plan better lessons, faster</h3><p>Toolkit #1 · AI for teachers · Free download</p></div></div>
+</a>
 
-<article class="card">
-<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><path d="M15 15.5c2.8.2 5 2.2 5 4.5"></path></svg></div>
-<span class="tag">COMING SOON</span>
-<h3>Behaviour &amp; routines</h3>
-<p>Calm, consistent routines that cut low-level disruption, the challenge teachers report most.</p>
-<ul class="inside"><li>Routines for the first 5 minutes</li><li>Scripts for calm, positive correction</li></ul>
-</article>
+<a class="card" href="teacher-toolkit-02-check-for-understanding.pdf" download data-cat="check" data-k="check for understanding assessment formative mini whiteboards hinge question cold call abcd vote exit ticket">
+<div class="thumb"><img src="thumb-tt02.jpg" alt="" width="800" height="450"><span class="badge">PDF · 8 pages</span></div>
+<div class="meta"><img src="avatar-small.jpg" alt="" width="36" height="36"><div><h3>5 ways to check every student understands</h3><p>Toolkit #2 · Checking understanding · Free download</p></div></div>
+</a>
 
-<article class="card">
-<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"></circle><path d="M12 7v6"></path><path d="M6 10h12"></path><path d="M9 21l3-8 3 8"></path></svg></div>
-<span class="tag">COMING SOON</span>
-<h3>Inclusion &amp; SEN</h3>
-<p>Simple adaptations so students with additional needs can access the same learning.</p>
-<ul class="inside"><li>Scaffolds that work in any subject</li><li>Quick checklist for inclusive lessons</li></ul>
-</article>
+<div class="card soon" data-cat="behaviour" data-k="behaviour routines disruption classroom management calm correction start of lesson">
+<div class="thumb"><div class="soon-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><path d="M15 15.5c2.8.2 5 2.2 5 4.5"></path></svg></div><span class="badge">COMING SOON</span></div>
+<div class="meta"><img src="avatar-small.jpg" alt="" width="36" height="36"><div><h3>Calm routines for the first 5 minutes</h3><p>Behaviour · Guide</p></div></div>
+</div>
 
+<div class="card soon" data-cat="sen" data-k="inclusion sen special educational needs scaffolds adaptations accessibility support">
+<div class="thumb"><div class="soon-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"></circle><path d="M12 7v6"></path><path d="M6 10h12"></path><path d="M9 21l3-8 3 8"></path></svg></div><span class="badge">COMING SOON</span></div>
+<div class="meta"><img src="avatar-small.jpg" alt="" width="36" height="36"><div><h3>Scaffolds that work in any subject</h3><p>Inclusion &amp; SEN · Guide</p></div></div>
+</div>
 
-<article class="card">
-<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path><path d="M9 2h6"></path></svg></div>
-<span class="tag">COMING SOON</span>
-<h3>Workload &amp; planning</h3>
-<p>Save hours on planning, marking and admin without lowering quality.</p>
-<ul class="inside"><li>Whole-class feedback template</li><li>Planning shortcuts that keep quality</li></ul>
-</article>
+<div class="card soon" data-cat="workload" data-k="workload marking feedback whole-class feedback template time planning admin">
+<div class="thumb"><div class="soon-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path><path d="M9 2h6"></path></svg></div><span class="badge">COMING SOON</span></div>
+<div class="meta"><img src="avatar-small.jpg" alt="" width="36" height="36"><div><h3>Whole-class feedback template</h3><p>Workload · Template</p></div></div>
+</div>
+
+<div class="card soon" data-cat="ai" data-k="ai prompt library subject english maths science arabic history prompts">
+<div class="thumb"><div class="soon-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"></path><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"></path></svg></div><span class="badge">COMING SOON</span></div>
+<div class="meta"><img src="avatar-small.jpg" alt="" width="36" height="36"><div><h3>AI prompt library, by subject</h3><p>AI for teachers · Library</p></div></div>
+</div>
+
+<div class="card soon" data-cat="check" data-k="exit ticket sorter assessment got it nearly not yet planning starter">
+<div class="thumb"><div class="soon-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div><span class="badge">COMING SOON</span></div>
+<div class="meta"><img src="avatar-small.jpg" alt="" width="36" height="36"><div><h3>Exit ticket sorter</h3><p>Checking understanding · Free tool</p></div></div>
+</div>
 
 </div>
-<p class="evidence"><b style="color:var(--navy)">Why these five?</b> International teacher surveys repeatedly name AI skills and teaching students with special educational needs among teachers' top professional-learning needs (<a href="https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/chile_e31949b6-en.html" rel="noopener">OECD TALIS 2024</a>). Most teachers report no formal guidance on using AI (<a href="https://news.gallup.com/poll/710534/teachers-receive-no-formal-guidance.aspx" rel="noopener">Gallup</a>), low-level disruption is the most common behaviour challenge, and workload is the top wellbeing concern (<a href="https://www.tes.com/for-schools/blog/article/state-teacher-wellbeing-schools" rel="noopener">Tes</a>).</p>
+<div class="empty" id="empty">
+<h3>Nothing here yet.</h3>
+<p>Tell me what you need, and it could be the next guide or tool.</p>
+<a class="btn" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Request a topic</a>
+</div>
+<p class="sources">Topics chosen from international teacher surveys: <a href="https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/chile_e31949b6-en.html" rel="noopener">OECD TALIS 2024</a>, <a href="https://news.gallup.com/poll/710534/teachers-receive-no-formal-guidance.aspx" rel="noopener">Gallup</a> and <a href="https://www.tes.com/for-schools/blog/article/state-teacher-wellbeing-schools" rel="noopener">Tes</a>. New guide every Monday · <b>#AlashiTeacherToolkit</b></p>
 </div>
 </section>
 
-<section id="toolkit" style="background:#fff">
+<section class="band" id="tool">
 <div class="wrap">
-<div class="label">TEACHER TOOLKIT</div>
-<h2 class="sec-h">One practical teaching tool, every week.</h2>
-<p class="sec-p">Short, research-informed guides you can save, share and use in your next lesson, in any subject. Download each one as a PDF.</p>
-<div class="grid">
-<article class="card" style="background:var(--ground)">
-<div class="thumb"><img src="tt01.jpg" alt="Cover: 5 AI prompts that plan better lessons, faster"></div>
-<span class="tag">#1 · AI FOR TEACHERS</span>
-<h3>5 AI prompts that plan better lessons, faster</h3>
-<p>Misconceptions, differentiation, retrieval, worked examples and feedback, plus 3 checks before anything reaches a class.</p>
-<a class="btn btn-dark" href="teacher-toolkit-01-ai-prompts.pdf" download>Download PDF</a>
-</article>
-<article class="card" style="background:var(--ground)">
-<div class="thumb"><img src="tt02.jpg" alt="Cover: Is everyone learning, or just the 3 hands that went up?"></div>
-<span class="tag live">#2 · CHECKING UNDERSTANDING</span>
-<h3>5 ways to check every student understands</h3>
-<p>Mini whiteboards, hinge questions, Cold Call, ABCD votes and exit tickets, each with how, why and what to watch out for.</p>
-<a class="btn btn-dark" href="teacher-toolkit-02-check-for-understanding.pdf" download>Download PDF</a>
-</article>
+<div class="head reveal">
+<div class="eyebrow">Free tool</div>
+<h2>Cold Call picker.<br><span>Every student thinks.</span></h2>
+<p>Ask the whole class, give thinking time, then pick a name fairly. Any subject, any screen.</p>
+<div class="btns" style="margin-top:28px"><a class="btn light" href="cold-call.html">Try it free</a></div>
 </div>
-<div class="hashtag">
-<div>Follow the series on LinkedIn<br><b>#AlashiTeacherToolkit</b></div>
-<a class="btn btn-primary" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Follow for new guides</a>
+<div class="shot reveal"><img src="tool-shot.jpg" alt="Cold Call picker: class list on the left, the selected name shown large on the right" width="1400" height="722" loading="lazy"></div>
+<div class="points">
+<div class="reveal"><h3>Fair by design</h3><p>Nobody is picked twice until everyone has had a turn.</p></div>
+<div class="reveal"><h3>Built-in think time</h3><p>A 3, 5 or 8 second countdown before any name appears.</p></div>
+<div class="reveal"><h3>Private</h3><p>No sign-up. Your class list never leaves your browser.</p></div>
 </div>
 </div>
 </section>
 
-<section id="tools">
+<section class="photos" aria-labelledby="ph-h">
 <div class="wrap">
-<div class="label">FREE TOOLS</div>
-<h2 class="sec-h">Classroom tools, free to use.</h2>
-<p class="sec-p">Simple tools for any subject that run in your browser. No sign-up, and nothing you type is uploaded.</p>
-<div class="grid">
-<article class="card">
-<div class="num">01</div>
-<span class="tag live">NEW</span>
-<h3>Cold Call picker + think timer</h3>
-<p>Ask the whole class, give 3–5 seconds of thinking time, then pick a name fairly. Nobody is picked twice until everyone has had a turn.</p>
-<a class="btn btn-dark" href="cold-call.html">Open the tool</a>
-</article>
-<article class="card">
-<div class="num">02</div>
-<span class="tag">COMING SOON</span>
-<h3>Exit ticket sorter</h3>
-<p>Sort answers into got it / nearly / not yet in seconds, and plan tomorrow's starter from the gaps.</p>
-</article>
-<article class="card">
-<div class="num">03</div>
-<span class="tag">COMING SOON</span>
-<h3>AI prompt library by subject</h3>
-<p>Ready-to-copy prompts for planning, differentiation and feedback, sorted by subject and age.</p>
-</article>
+<div class="head reveal">
+<div class="eyebrow">Behind the toolkit</div>
+<h2 id="ph-h">Made by a working teacher.</h2>
+<p>Every idea here comes from research and from years in real classrooms in Gaza, Egypt and the UAE.</p>
+</div>
+<ul class="strip reveal">
+<li><figure><div class="ph"><img src="photo-desk.jpg" alt="Abdulhamid at his desk, planning with a textbook" width="720" height="900" loading="lazy"></div><figcaption>Planning<span>Building lessons from research</span></figcaption></figure></li>
+<li><figure><div class="ph"><img src="photo-groupwork2.jpg" alt="Abdulhamid leaning in to guide a group of students during an investigation" width="720" height="900" loading="lazy"></div><figcaption>Group work<span>Guiding an investigation</span></figcaption></figure></li>
+<li><figure><div class="ph"><img src="photo-meeting.jpg" alt="Abdulhamid listening in a professional meeting" width="720" height="900" loading="lazy"></div><figcaption>Professional learning<span>Training and team planning</span></figcaption></figure></li>
+</ul>
+</div>
+</section>
+
+<section class="ask">
+<div class="wrap">
+<div class="box reveal">
+<h2>Can't find what you need?</h2>
+<p>Tell me the challenge in your classroom. The most requested topics become the next guides and tools.</p>
+<div class="btns"><a class="btn" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Message me on LinkedIn</a></div>
 </div>
 </div>
 </section>
 
-<section style="padding-top:0">
+<section class="about" id="about">
 <div class="wrap">
-<div class="ask">
-<div>
-<h2>What do you need help with?</h2>
-<p>Tell me the challenge you face in your classroom. The most requested topics become the next guides and tools.</p>
-</div>
-<a class="btn btn-primary" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Message me on LinkedIn</a>
-</div>
-</div>
-</section>
-
-<section id="about" style="background:#fff">
-<div class="wrap about">
-<img src="avatar.jpg" alt="Portrait of Abdulhamid Alashi" width="280" height="280">
-<div>
-<div class="label">ABOUT</div>
-<h2 class="sec-h">Abdulhamid Alashi</h2>
-<p class="sec-p" style="margin-bottom:0">Teacher and former Head of Science, based in Abu Dhabi, UAE. I turn research and AI into practical tools that save teachers time and help every student learn, whatever the subject.</p>
-<div class="facts">
-<div class="fact"><b>TEACHING</b>Science Teacher &amp; Grade 8 Intervention Lead. Former Head of Science. ADEK approved.</div>
-<div class="fact"><b>EXPERIENCE</b>6+ years across British, American, IB and Egyptian curricula, in Gaza, Egypt and the UAE. IGCSE and AP Physics 1 specialist.</div>
-<div class="fact"><b>EDUCATION</b>B.Sc. Physics &amp; Nanotechnology (First Division). General Diploma in Education. M.Sc. Physics of Nanotechnology in progress.</div>
-<div class="fact"><b>RECENT CPD</b>
-<ul class="clean">
-<li>Generative AI for Educators (Google)</li>
-<li>Edexcel Ready! IGCSE &amp; IAL (Pearson)</li>
-<li>Assessment in secondary science (Open University)</li>
-<li>Leadership for Teachers (Seneca Learning)</li>
-</ul></div>
-</div>
-<div class="btns" style="margin-top:28px">
-<a class="btn btn-dark" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Connect on LinkedIn</a>
-</div>
+<div class="portrait reveal"><img src="portrait.jpg" alt="Portrait of Abdulhamid Alashi" width="900" height="900" loading="lazy"></div>
+<div class="reveal">
+<div class="eyebrow">About</div>
+<h2>Built by a teacher.<br>For teachers.</h2>
+<p class="lead">I'm Abdulhamid Alashi, a teacher and former Head of Science in Abu Dhabi. I turn research and AI into practical tools that save teachers time.</p>
+<ul class="facts">
+<li><span>Now</span>Science Teacher &amp; Grade 8 Intervention Lead · ADEK approved</li>
+<li><span>Experience</span>6+ years across British, American, IB and Egyptian curricula, in Gaza, Egypt and the UAE</li>
+<li><span>Education</span>B.Sc. Physics &amp; Nanotechnology (First Division) · General Diploma in Education · M.Sc. in progress</li>
+<li><span>Recent CPD</span>Generative AI for Educators (Google) · Edexcel Ready! (Pearson) · Assessment in secondary science (Open University) · Leadership for Teachers (Seneca)</li>
+</ul>
+<div class="btns"><a class="btn" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Connect on LinkedIn</a></div>
 </div>
 </div>
 </section>
@@ -269,5 +340,42 @@ footer a{color:#fff;display:inline-block;padding:12px 0}
 <div><a href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">LinkedIn</a></div>
 </div>
 </footer>
+
+<script>
+(function(){
+  var q=document.getElementById('q'), clear=document.getElementById('clear');
+  var cards=[].slice.call(document.querySelectorAll('#grid .card'));
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var count=document.getElementById('count'), empty=document.getElementById('empty');
+  var cat='all';
+  function norm(s){return (s||'').toLowerCase();}
+  function apply(){
+    var term=norm(q.value).trim(), shown=0;
+    cards.forEach(function(c){
+      var text=norm(c.textContent+' '+c.getAttribute('data-k'));
+      var ok=(cat==='all'||c.getAttribute('data-cat')===cat)&&(!term||term.split(/\s+/).every(function(w){return text.indexOf(w)>-1;}));
+      c.hidden=!ok; if(ok) shown++;
+    });
+    var ready=cards.filter(function(c){return !c.hidden&&!c.classList.contains('soon');}).length;
+    count.textContent=shown?(shown+(shown===1?' item':' items')+' · '+ready+' ready now'):'';
+    empty.classList.toggle('show',shown===0);
+    clear.classList.toggle('show',q.value.length>0);
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    cat=ch.getAttribute('data-cat');
+    chips.forEach(function(o){o.setAttribute('aria-pressed',o===ch?'true':'false');});
+    apply();
+    if(window.scrollY<200) document.getElementById('library').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  });});
+  q.addEventListener('input',apply);
+  q.addEventListener('keydown',function(e){if(e.key==='Enter'){document.getElementById('library').scrollIntoView();}});
+  clear.addEventListener('click',function(){q.value='';apply();q.focus();});
+  apply();
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>
