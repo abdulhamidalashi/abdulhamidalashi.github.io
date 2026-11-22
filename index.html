@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alashi Teacher Toolkit · Free tools and strategies for every teacher</title>
+<meta name="description" content="Free, practical tools and research-informed strategies for teachers of every subject: AI for teachers, checking understanding, behaviour, inclusion, bilingual classrooms and workload.">
+<meta property="og:title" content="Alashi Teacher Toolkit">
+<meta property="og:description" content="Free tools and strategies for every teacher, every subject.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2742;--ground:#F6F7FB;--amber:#F2A541;--amber-dark:#8A5A00;--amber-num:#B86E00;--muted:#51627A;--soft:#B9C6D8;--line:#DCE2EC;--green:#147A52}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--navy);background:var(--ground);line-height:1.55;font-size:18px}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.1;margin:0}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:#fff;padding:8px 12px;z-index:9}
+.nav{background:var(--navy);color:#fff}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:20px;min-height:44px}
+.brand img{width:44px;height:44px;border-radius:50%;border:3px solid var(--amber);object-fit:cover}
+.nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0;flex-wrap:wrap}
+.nav ul a{color:#fff;text-decoration:none;font-weight:500;padding:10px 14px;border-radius:999px;display:inline-block;min-height:44px}
+.nav ul a:hover{background:rgba(255,255,255,.1)}
+.hero{background:var(--navy);color:#fff;padding:56px 0 88px}
+.kicker{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--amber);color:var(--amber);border-radius:999px;padding:8px 18px;font-weight:700;letter-spacing:2px;font-size:14px}
+.hero h1{font-size:clamp(40px,6vw,72px);letter-spacing:-1px;margin:24px 0 20px;max-width:900px}
+.hero h1 span{color:var(--amber)}
+.hero p{font-size:20px;color:#E3E9F2;max-width:720px;margin:0 0 32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:17px}
+.btn-primary{background:var(--amber);color:var(--navy)}.btn-primary:hover{background:#ffbb63}
+.btn-ghost{border:2px solid #fff;color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-dark{background:var(--navy);color:#fff}.btn-dark:hover{background:#1b3a5f}
+.btn-line{border:2px solid var(--navy);color:var(--navy)}.btn-line:hover{background:#EEF1F7}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;padding:0;list-style:none}
+.chips li{background:rgba(255,255,255,.08);border-radius:999px;padding:8px 16px;font-size:16px;color:#E3E9F2}
+section{padding:80px 0}
+.label{font-weight:700;letter-spacing:3px;font-size:14px;color:var(--amber-dark);margin-bottom:12px}
+.sec-h{font-size:clamp(32px,4vw,48px);margin-bottom:14px}
+.sec-p{color:var(--muted);max-width:740px;margin:0 0 40px;font-size:19px}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:#fff;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line)}
+.card h3{font-size:25px}
+.card p{margin:0;color:var(--muted)}
+.card .btn{align-self:flex-start;margin-top:auto}
+.icon{width:56px;height:56px;border-radius:16px;background:var(--navy);color:var(--amber);display:flex;align-items:center;justify-content:center}
+.icon svg{width:30px;height:30px}
+.tag{align-self:flex-start;font-size:14px;font-weight:700;letter-spacing:1px;padding:6px 12px;border-radius:999px;background:#EEF1F7;color:var(--navy)}
+.tag.live{background:var(--navy);color:var(--amber)}
+.inside{margin:0;padding-left:20px;color:var(--navy);font-size:17px}
+.inside li{margin:3px 0}
+.evidence{margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 24px;font-size:16px;color:var(--muted)}
+.evidence a{color:var(--navy)}
+.thumb{border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:var(--navy)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.num{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:56px;line-height:.9;color:var(--amber-num)}
+.hashtag{margin-top:32px;background:var(--navy);color:#fff;border-radius:24px;padding:28px 32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.hashtag b{font-family:"Space Grotesk",sans-serif;font-size:26px;color:var(--amber)}
+.ask{background:var(--navy);color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.ask h2{font-size:clamp(28px,3.5vw,40px);margin-bottom:10px}
+.ask p{margin:0;color:#E3E9F2}
+.about{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
+.about img{width:100%;max-width:280px;border-radius:24px;border:4px solid var(--amber);display:block}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:28px}
+.fact{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.fact b{display:block;font-size:14px;letter-spacing:2px;color:var(--amber-dark);margin-bottom:6px}
+ul.clean{margin:0;padding-left:20px}ul.clean li{margin:4px 0}
+footer{background:var(--navy);color:var(--soft);padding:40px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer a{color:#fff;display:inline-block;padding:12px 0}
+@media (max-width:760px){.about,.ask{grid-template-columns:1fr}.about img{max-width:200px}section{padding:56px 0}.hero{padding:40px 0 64px}.ask{padding:28px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="#top"><img src="avatar-small.jpg" alt="" width="44" height="44">Alashi Teacher Toolkit</a>
+<nav aria-label="Main"><ul>
+<li><a href="#support">Support areas</a></li>
+<li><a href="#toolkit">Toolkit</a></li>
+<li><a href="#tools">Free tools</a></li>
+<li><a href="#about">About</a></li>
+</ul></nav>
+</div>
+</header>
+
+<main id="main">
+<div class="hero" id="top">
+<div class="wrap">
+<span class="kicker">FREE FOR TEACHERS · EVERY SUBJECT</span>
+<h1>Teach smarter, not longer. <span>Free tools for every teacher.</span></h1>
+<p>Practical, research-informed strategies and simple classroom tools for teachers of any subject, from AI to assessment to behaviour. Built by a teacher, for teachers.</p>
+<div class="btns">
+<a class="btn btn-primary" href="#support">Find support</a>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Follow on LinkedIn</a>
+</div>
+<ul class="chips" aria-label="Areas covered">
+<li>AI for teachers</li><li>Checking understanding</li><li>Behaviour</li><li>Inclusion &amp; SEN</li><li>Bilingual classrooms</li><li>Workload</li>
+</ul>
+</div>
+</div>
+
+<section id="support">
+<div class="wrap">
+<div class="label">WHERE TEACHERS NEED SUPPORT</div>
+<h2 class="sec-h">Six areas teachers ask for most.</h2>
+<p class="sec-p">Chosen from international teacher surveys, not guesswork. Each area grows week by week with guides and tools you can use in any subject.</p>
+<div class="grid">
+
+<article class="card">
+<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"></path><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"></path></svg></div>
+<span class="tag live">AVAILABLE</span>
+<h3>AI for teachers</h3>
+<p>Use AI safely to plan, differentiate and give feedback, with checks that keep you in control.</p>
+<ul class="inside"><li>5 AI prompts for planning (Toolkit #1)</li><li>Coming: AI prompt library by subject</li></ul>
+<a class="btn btn-line" href="#toolkit">See the guide</a>
+</article>
+
+<article class="card">
+<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+<span class="tag live">AVAILABLE</span>
+<h3>Checking understanding</h3>
+<p>See what every student knows, not just the few with hands up, and act on it in the lesson.</p>
+<ul class="inside"><li>5 ways to check understanding (Toolkit #2)</li><li>Cold Call picker + think timer</li></ul>
+<a class="btn btn-line" href="#tools">Open the tool</a>
+</article>
+
+<article class="card">
+<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><path d="M15 15.5c2.8.2 5 2.2 5 4.5"></path></svg></div>
+<span class="tag">COMING SOON</span>
+<h3>Behaviour &amp; routines</h3>
+<p>Calm, consistent routines that cut low-level disruption, the challenge teachers report most.</p>
+<ul class="inside"><li>Routines for the first 5 minutes</li><li>Scripts for calm, positive correction</li></ul>
+</article>
+
+<article class="card">
+<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"></circle><path d="M12 7v6"></path><path d="M6 10h12"></path><path d="M9 21l3-8 3 8"></path></svg></div>
+<span class="tag">COMING SOON</span>
+<h3>Inclusion &amp; SEN</h3>
+<p>Simple adaptations so students with additional needs can access the same learning.</p>
+<ul class="inside"><li>Scaffolds that work in any subject</li><li>Quick checklist for inclusive lessons</li></ul>
+</article>
+
+<article class="card">
+<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h9"></path><path d="M8.5 3v2"></path><path d="M6 5c.5 3 2.5 5.5 5 7"></path><path d="M11 5c-.8 3.5-3.5 6.5-7 8"></path><path d="M12 21l4.5-10L21 21"></path><path d="M13.5 18h6"></path></svg></div>
+<span class="tag">COMING SOON</span>
+<h3>Bilingual &amp; EAL classrooms</h3>
+<p>Support students learning in a second language, with Arabic–English vocabulary help.</p>
+<ul class="inside"><li>Key-word glossaries (Arabic–English)</li><li>Sentence starters for any subject</li></ul>
+</article>
+
+<article class="card">
+<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path><path d="M9 2h6"></path></svg></div>
+<span class="tag">COMING SOON</span>
+<h3>Workload &amp; planning</h3>
+<p>Save hours on planning, marking and admin without lowering quality.</p>
+<ul class="inside"><li>Whole-class feedback template</li><li>Planning shortcuts that keep quality</li></ul>
+</article>
+
+</div>
+<p class="evidence"><b style="color:var(--navy)">Why these six?</b> International teacher surveys repeatedly name AI skills, teaching students with special educational needs and teaching in multilingual classrooms among teachers' top professional-learning needs (<a href="https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/chile_e31949b6-en.html" rel="noopener">OECD TALIS 2024</a>). Most teachers report no formal guidance on using AI (<a href="https://news.gallup.com/poll/710534/teachers-receive-no-formal-guidance.aspx" rel="noopener">Gallup</a>), low-level disruption is the most common behaviour challenge, and workload is the top wellbeing concern (<a href="https://www.tes.com/for-schools/blog/article/state-teacher-wellbeing-schools" rel="noopener">Tes</a>).</p>
+</div>
+</section>
+
+<section id="toolkit" style="background:#fff">
+<div class="wrap">
+<div class="label">TEACHER TOOLKIT</div>
+<h2 class="sec-h">One practical teaching tool, every week.</h2>
+<p class="sec-p">Short, research-informed guides you can save, share and use in your next lesson, in any subject. Download each one as a PDF.</p>
+<div class="grid">
+<article class="card" style="background:var(--ground)">
+<div class="thumb"><img src="tt01.jpg" alt="Cover: 5 AI prompts that plan better lessons, faster"></div>
+<span class="tag">#1 · AI FOR TEACHERS</span>
+<h3>5 AI prompts that plan better lessons, faster</h3>
+<p>Misconceptions, differentiation, retrieval, worked examples and feedback, plus 3 checks before anything reaches a class.</p>
+<a class="btn btn-dark" href="teacher-toolkit-01-ai-prompts.pdf" download>Download PDF</a>
+</article>
+<article class="card" style="background:var(--ground)">
+<div class="thumb"><img src="tt02.jpg" alt="Cover: Is everyone learning, or just the 3 hands that went up?"></div>
+<span class="tag live">#2 · CHECKING UNDERSTANDING</span>
+<h3>5 ways to check every student understands</h3>
+<p>Mini whiteboards, hinge questions, Cold Call, ABCD votes and exit tickets, each with how, why and what to watch out for.</p>
+<a class="btn btn-dark" href="teacher-toolkit-02-check-for-understanding.pdf" download>Download PDF</a>
+</article>
+</div>
+<div class="hashtag">
+<div>Follow the series on LinkedIn<br><b>#AlashiTeacherToolkit</b></div>
+<a class="btn btn-primary" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Follow for new guides</a>
+</div>
+</div>
+</section>
+
+<section id="tools">
+<div class="wrap">
+<div class="label">FREE TOOLS</div>
+<h2 class="sec-h">Classroom tools, free to use.</h2>
+<p class="sec-p">Simple tools for any subject that run in your browser. No sign-up, and nothing you type is uploaded.</p>
+<div class="grid">
+<article class="card">
+<div class="num">01</div>
+<span class="tag live">NEW</span>
+<h3>Cold Call picker + think timer</h3>
+<p>Ask the whole class, give 3–5 seconds of thinking time, then pick a name fairly. Nobody is picked twice until everyone has had a turn.</p>
+<a class="btn btn-dark" href="cold-call.html">Open the tool</a>
+</article>
+<article class="card">
+<div class="num">02</div>
+<span class="tag">COMING SOON</span>
+<h3>Exit ticket sorter</h3>
+<p>Sort answers into got it / nearly / not yet in seconds, and plan tomorrow's starter from the gaps.</p>
+</article>
+<article class="card">
+<div class="num">03</div>
+<span class="tag">COMING SOON</span>
+<h3>AI prompt library by subject</h3>
+<p>Ready-to-copy prompts for planning, differentiation and feedback, sorted by subject and age.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0">
+<div class="wrap">
+<div class="ask">
+<div>
+<h2>What do you need help with?</h2>
+<p>Tell me the challenge you face in your classroom. The most requested topics become the next guides and tools.</p>
+</div>
+<a class="btn btn-primary" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Message me on LinkedIn</a>
+</div>
+</div>
+</section>
+
+<section id="about" style="background:#fff">
+<div class="wrap about">
+<img src="avatar.jpg" alt="Portrait of Abdulhamid Alashi" width="280" height="280">
+<div>
+<div class="label">ABOUT</div>
+<h2 class="sec-h">Abdulhamid Alashi</h2>
+<p class="sec-p" style="margin-bottom:0">Teacher and former Head of Science, based in Abu Dhabi, UAE. I turn research and AI into practical tools that save teachers time and help every student learn, whatever the subject.</p>
+<div class="facts">
+<div class="fact"><b>TEACHING</b>Science Teacher &amp; Grade 8 Intervention Lead. Former Head of Science. ADEK approved.</div>
+<div class="fact"><b>EXPERIENCE</b>6+ years across British, American, IB and Egyptian curricula, in Gaza, Egypt and the UAE. IGCSE and AP Physics 1 specialist.</div>
+<div class="fact"><b>EDUCATION</b>B.Sc. Physics &amp; Nanotechnology (First Division). General Diploma in Education. M.Sc. Physics of Nanotechnology in progress.</div>
+<div class="fact"><b>RECENT CPD</b>
+<ul class="clean">
+<li>Generative AI for Educators (Google)</li>
+<li>Edexcel Ready! IGCSE &amp; IAL (Pearson)</li>
+<li>Assessment in secondary science (Open University)</li>
+<li>Leadership for Teachers (Seneca Learning)</li>
+</ul></div>
+</div>
+<div class="btns" style="margin-top:28px">
+<a class="btn btn-dark" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Connect on LinkedIn</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div>© 2026 Abdulhamid Alashi · Free resources for every teacher</div>
+<div><a href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">LinkedIn</a></div>
+</div>
+</footer>
+</body>
+</html>

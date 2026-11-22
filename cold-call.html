@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cold Call picker + think timer · Alashi Teacher Toolkit</title>
+<meta name="description" content="Free Cold Call name picker with a think-time timer. No repeats until everyone has had a turn. Runs in your browser; nothing is uploaded.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2742;--ground:#F6F7FB;--amber:#F2A541;--amber-dark:#8A5A00;--muted:#51627A;--soft:#B9C6D8;--line:#DCE2EC;--green:#147A52}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--navy);background:var(--ground);line-height:1.5;font-size:18px}
+h1,h2{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.1;margin:0}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.nav{background:var(--navy)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:12px;flex-wrap:wrap}
+.nav a{color:#fff;text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+.nav .home{font-family:"Space Grotesk",sans-serif;font-size:19px}
+.head{padding:40px 0 24px}
+.label{font-weight:700;letter-spacing:3px;font-size:14px;color:var(--amber-dark);margin-bottom:10px}
+.head h1{font-size:clamp(32px,4.5vw,52px);margin-bottom:12px}
+.head p{color:var(--muted);margin:0;max-width:760px}
+.layout{display:grid;grid-template-columns:340px 1fr;gap:24px;padding-bottom:56px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:14px}
+label{font-weight:700}
+textarea{width:100%;min-height:240px;border:2px solid var(--line);border-radius:14px;padding:12px;font:inherit;font-size:17px;resize:vertical;color:var(--navy)}
+select{font:inherit;padding:10px 12px;border:2px solid var(--line);border-radius:12px;min-height:44px;color:var(--navy);background:#fff}
+.hint{font-size:15px;color:var(--muted);margin:0}
+.stage{background:var(--navy);color:#fff;border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:460px}
+.stage .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--soft);font-size:16px}
+.display{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}
+.state{font-weight:700;letter-spacing:3px;font-size:15px;color:var(--soft)}
+.big{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(48px,8vw,104px);line-height:1;color:#fff;word-break:break-word}
+.big.count{color:var(--amber)}
+.controls{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+button{font:inherit;font-weight:700;min-height:52px;padding:12px 26px;border-radius:999px;border:0;cursor:pointer}
+.go{background:var(--amber);color:var(--navy);font-size:19px}
+.go:hover{background:#ffbb63}
+.sec{background:transparent;color:#fff;border:2px solid #fff}
+.sec:hover{background:rgba(255,255,255,.1)}
+.lite{background:#EEF1F7;color:var(--navy)}
+.lite:hover{background:#E1E6F0}
+button:disabled{opacity:.5;cursor:not-allowed}
+.picked{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.picked li{background:rgba(255,255,255,.1);padding:6px 12px;border-radius:999px;font-size:15px}
+.how{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px 28px;margin-bottom:56px}
+.how h2{font-size:28px;margin-bottom:12px}
+.how ol{margin:0;padding-left:22px}.how li{margin:6px 0}
+.src{font-size:15px;color:var(--muted);margin-top:12px}
+footer{background:var(--navy);color:var(--soft);padding:28px 0;font-size:16px}
+footer a{color:#fff}
+@media (max-width:820px){.layout{grid-template-columns:1fr}.stage{min-height:380px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="home" href="index.html">← Alashi Teacher Toolkit</a>
+<a href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Follow on LinkedIn</a>
+</div></header>
+
+<main class="wrap">
+<div class="head">
+<div class="label">FREE TOOL 01</div>
+<h1>Cold Call picker + think timer</h1>
+<p>Ask the whole class, give thinking time, then pick a name fairly. Nobody is picked twice until everyone has had a turn. Your list stays in this browser and is never uploaded.</p>
+</div>
+
+<div class="layout">
+<div class="panel">
+<label for="names">Class list (one name per line)</label>
+<textarea id="names" spellcheck="false" placeholder="Student 1&#10;Student 2&#10;Student 3"></textarea>
+<p class="hint" id="countHint">0 names</p>
+<label for="think">Thinking time</label>
+<select id="think">
+<option value="3">3 seconds</option>
+<option value="5" selected>5 seconds</option>
+<option value="8">8 seconds</option>
+<option value="0">No timer</option>
+</select>
+<button type="button" class="lite" id="clearList">Clear list</button>
+<p class="hint">Tip: use first names or initials only.</p>
+</div>
+
+<div class="stage">
+<div class="top"><span id="progress">Turns: 0 / 0</span><span>Ask first, then pick</span></div>
+<div class="display" aria-live="polite">
+<div class="state" id="state">READY</div>
+<div class="big" id="big">Ask your question</div>
+</div>
+<div class="controls">
+<button type="button" class="go" id="pick">Start think time</button>
+<button type="button" class="sec" id="resetRound">New round</button>
+</div>
+<ul class="picked" id="picked" aria-label="Already picked this round"></ul>
+</div>
+</div>
+
+<div class="how">
+<h2>How to use it well</h2>
+<ol>
+<li>Ask the question to the <b>whole class</b> first. Don't say a name yet.</li>
+<li>Press <b>Start think time</b>. Everyone thinks while the countdown runs.</li>
+<li>The name appears at the end. Keep it warm: never use it to catch someone out.</li>
+<li>Follow up with “Who can add to that?” to bring in more students.</li>
+</ol>
+<p class="src">Based on the Cold Call technique from Doug Lemov, <i>Teach Like a Champion</i>.</p>
+</div>
+</main>
+
+<footer><div class="wrap">Part of the <a href="index.html">Alashi Teacher Toolkit</a> · Free for teachers · #AlashiTeacherToolkit</div></footer>
+
+<script>
+(function(){
+  var KEY='atk-coldcall-v1';
+  var namesEl=document.getElementById('names'), thinkEl=document.getElementById('think');
+  var bigEl=document.getElementById('big'), stateEl=document.getElementById('state');
+  var pickBtn=document.getElementById('pick'), resetBtn=document.getElementById('resetRound');
+  var pickedEl=document.getElementById('picked'), progEl=document.getElementById('progress'), countHint=document.getElementById('countHint');
+  var used=[], timer=null;
+
+  function load(){ try{ var s=JSON.parse(localStorage.getItem(KEY)||'{}'); if(s.names) namesEl.value=s.names; if(s.think) thinkEl.value=s.think; used=Array.isArray(s.used)?s.used:[]; }catch(e){} }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify({names:namesEl.value, think:thinkEl.value, used:used})); }catch(e){} }
+  function names(){ var seen={}; return namesEl.value.split(/\r?\n/).map(function(n){return n.trim();}).filter(function(n){ if(!n||seen[n]) return false; seen[n]=1; return true; }); }
+  function render(){
+    var all=names(); used=used.filter(function(n){return all.indexOf(n)>-1;});
+    countHint.textContent=all.length+(all.length===1?' name':' names');
+    progEl.textContent='Turns: '+used.length+' / '+all.length;
+    pickedEl.innerHTML=''; used.forEach(function(n){ var li=document.createElement('li'); li.textContent=n; pickedEl.appendChild(li); });
+    pickBtn.disabled=all.length===0 || timer!==null;
+  }
+  function choose(){
+    var all=names(); var left=all.filter(function(n){return used.indexOf(n)<0;});
+    if(left.length===0){ used=[]; left=all.slice(); }
+    var arr=new Uint32Array(1); (window.crypto||window.msCrypto).getRandomValues(arr);
+    var n=left[arr[0]%left.length]; used.push(n);
+    stateEl.textContent='YOUR TURN'; bigEl.classList.remove('count'); bigEl.textContent=n;
+    if(used.length===all.length){ stateEl.textContent='YOUR TURN · LAST NAME THIS ROUND'; }
+    save(); render();
+  }
+  pickBtn.addEventListener('click', function(){
+    if(!names().length) return;
+    var t=parseInt(thinkEl.value,10)||0;
+    if(t===0){ choose(); return; }
+    stateEl.textContent='THINKING TIME'; bigEl.classList.add('count'); bigEl.textContent=t;
+    timer=setInterval(function(){ t--; if(t>0){ bigEl.textContent=t; } else { clearInterval(timer); timer=null; choose(); } },1000);
+    render();
+  });
+  resetBtn.addEventListener('click', function(){ if(timer){clearInterval(timer);timer=null;} used=[]; stateEl.textContent='READY'; bigEl.classList.remove('count'); bigEl.textContent='Ask your question'; save(); render(); });
+  document.getElementById('clearList').addEventListener('click', function(){ namesEl.value=''; used=[]; save(); render(); namesEl.focus(); });
+  namesEl.addEventListener('input', function(){ save(); render(); });
+  thinkEl.addEventListener('change', save);
+  load(); render();
+})();
+</script>
+</body>
+</html>
