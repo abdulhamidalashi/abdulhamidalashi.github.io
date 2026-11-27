@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every lesson is a literacy lesson · Alashi Teacher Toolkit</title>
+<meta name="description" content="Free guide for teachers of any subject: 5 research-based literacy habits and a printable vocabulary card, so students can read, talk and write like experts in your subject.">
+<meta property="og:title" content="Every lesson is a literacy lesson">
+<meta property="og:description" content="5 literacy habits for any subject, plus a printable vocabulary card.">
+<meta property="og:image" content="https://abdulhamidalashi.github.io/thumb-literacy.jpg">
+<link rel="icon" href="avatar-small.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--tile:#F5F5F7;--ink:#1D1D1F;--ink2:#515154;--line:#E3E3E8;--accent:#4B32D6;--pink:#B5307E;--grad:linear-gradient(90deg,#4B32D6 0%,#8B2FC9 50%,#C2307A 100%)}
+@media (prefers-color-scheme:dark){:root{--bg:#0F0F12;--tile:#18181C;--ink:#F5F5F7;--ink2:#B4B4BB;--line:#2A2A31;--accent:#A99BFF;--pink:#FF8FCB;--grad:linear-gradient(90deg,#A99BFF 0%,#D08CFF 50%,#FF8FCB 100%)}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:56px;gap:12px;flex-wrap:wrap;max-width:1080px}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;min-height:44px;display:inline-flex;align-items:center;gap:10px}
+.nav img{width:28px;height:28px;border-radius:50%}
+.nav .cta{color:var(--accent)}
+.head{text-align:center;padding:56px 0 36px}
+.eyebrow{font-weight:600;color:var(--pink);font-size:17px;margin-bottom:10px}
+.head h1{font-size:clamp(40px,7vw,72px);margin-bottom:16px}
+.head h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.head p{color:var(--ink2);font-size:20px;max-width:620px;margin:0 auto}
+.why{background:var(--tile);border-radius:24px;padding:26px 30px;margin-bottom:40px}
+.why b{color:var(--ink)}
+.why p{margin:0;color:var(--ink2)}
+h2.sec{font-size:clamp(28px,4vw,36px);margin:0 0 20px}
+.steps{list-style:none;margin:0 0 48px;padding:0;display:flex;flex-direction:column;gap:16px}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:22px 24px;border:1px solid var(--line);border-radius:20px}
+.num{width:52px;height:52px;border-radius:50%;background:var(--grad);color:#fff;font-family:"Inter Tight",Inter,sans-serif;font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center}
+@media (prefers-color-scheme:dark){.num{color:#0F0F12}}
+.steps h3{font-size:23px;margin:4px 0 6px}
+.steps p{margin:0 0 6px;color:var(--ink2)}
+.steps .say{margin:8px 0 0;font-size:15px;color:var(--ink);background:var(--tile);border-radius:12px;padding:10px 14px}
+.steps .say b{color:var(--accent)}
+.board{background:#000;color:#F5F5F7;border-radius:28px;padding:34px 36px;margin-bottom:16px}
+.board .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.board h3{font-size:36px}
+.pill{background:#F5F5F7;color:#000;border-radius:999px;padding:6px 16px;font-weight:600;font-size:15px}
+.q{display:grid;grid-template-columns:34px 1fr;gap:12px;border-top:1px solid #2C2C2E;padding:18px 0}
+.q .n{font-family:"Inter Tight",Inter,sans-serif;font-weight:800;font-size:26px;color:#B6A9FF}
+.q small{display:block;font-weight:700;letter-spacing:.12em;font-size:13px;color:#A1A1A6;text-transform:uppercase}
+.q span{font-size:20px}
+.board .done{border-top:1px solid #2C2C2E;padding-top:16px;color:#A1A1A6}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn{font:inherit;font-weight:600;min-height:48px;padding:12px 24px;border-radius:999px;border:0;cursor:pointer;font-size:17px;background:var(--accent);color:#fff;text-decoration:none;display:inline-flex;align-items:center}
+@media (prefers-color-scheme:dark){.btn{color:#0F0F12}}
+.btn.ghost{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.tips{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
+.tip{background:var(--tile);border-radius:20px;padding:22px 24px}
+.tip h3{font-size:20px;margin-bottom:8px}
+.tip ul{margin:0;padding-left:20px;color:var(--ink2)}
+.tip li{margin:4px 0}
+.src{font-size:14px;color:var(--ink2);border-top:1px solid var(--line);padding-top:20px;margin-bottom:40px}
+.src ol{padding-left:20px;margin:8px 0 0}
+footer{border-top:1px solid var(--line);color:var(--ink2);padding:24px 0;font-size:14px}
+footer a{color:var(--ink)}
+@media (max-width:700px){.tips{grid-template-columns:1fr}.steps li{grid-template-columns:1fr}.board{padding:26px 22px}}
+@media print{.nav,.actions,footer,.head p,.why,.steps,.tips,.src,h2.sec.hide-print{display:none!important}body{background:#fff}.board{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid #2C2C2E;border-radius:16px;overflow:hidden;margin-top:14px}
+.cards div{padding:14px 16px;border-top:1px solid #2C2C2E}
+.cards div:first-child{border-top:0}.cards .r{border-left:1px solid #2C2C2E}
+.cards small{display:block;font-weight:700;letter-spacing:.12em;font-size:13px;color:#A1A1A6;text-transform:uppercase;margin-bottom:6px}
+.cards span{font-size:18px;color:#F5F5F7}
+.cards .blank{display:block;height:28px;border-bottom:1.5px dotted #8E8E93;max-width:100%}
+.cards .wide{grid-column:1/-1;border-left:0}
+.tier{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0 4px}
+.tier div{background:var(--tile);border-radius:14px;padding:12px 14px;font-size:15px;color:var(--ink2)}
+.tier b{display:block;color:var(--ink);font-size:16px}
+@media (max-width:700px){.tier{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.cards .r{border-left:0}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a href="index.html"><img src="avatar-small.jpg" alt="" width="28" height="28">Alashi Teacher Toolkit</a>
+<a class="cta" href="index.html#library">More free guides ›</a>
+</div></header>
+
+<main class="wrap">
+<div class="head">
+<div class="eyebrow">Guide · Literacy · Any subject</div>
+<h1>Every lesson is a <span>literacy lesson.</span></h1>
+<p>Five habits that help students read, talk and write like experts in your subject, plus a printable vocabulary card.</p>
+</div>
+
+<div class="why">
+<p><b>Why it matters.</b> Every subject has its own way of reading, writing and talking. The EEF's guidance for secondary schools calls this <i>disciplinary literacy</i>, and its first recommendation is that every teacher, not only the English department, teaches it. When students can't read the text or write the answer, they can't show what they know.</p>
+</div>
+
+<h2 class="sec hide-print">The 5 habits</h2>
+<ol class="steps">
+<li><div class="num">1</div><div><h3>Choose 3 words worth teaching</h3>
+<p>Not every new word needs teaching. Skip the everyday words students already know, and pick a few of the other two kinds each lesson:</p>
+<div class="tier">
+<div><b>Everyday words</b>happy, run, table. Students already know these.</div>
+<div><b>Academic words</b>evaluate, justify, significant. They appear in every subject and quietly decide exam marks.</div>
+<div><b>Subject words</b>photosynthesis, metaphor, denominator. They need explicit teaching.</div>
+</div>
+<p class="say"><b>Try:</b> say the word, have the class say it back, give a student-friendly meaning, then two examples from your subject.</p></div></li>
+<li><div class="num">2</div><div><h3>Check readability before you hand it out</h3>
+<p>Run the text through a readability check first (Microsoft Word has one built in, the Flesch reading ease score). A low score tells you whether the challenge is your subject or the sentences.</p>
+<p class="say"><b>Fix:</b> split long sentences, pre-teach two key words, or read the first paragraph aloud together.</p></div></li>
+<li><div class="num">3</div><div><h3>Read it like an expert</h3>
+<p>Think aloud as you read a text in your subject: what you notice first, what you skip, what you check twice. A scientist reads a graph differently from how a historian reads a source. Show them how.</p>
+<p class="say"><b>Say:</b> “Before I read the method, I look at the title and the axes. Watch what I do next.”</p></div></li>
+<li><div class="num">4</div><div><h3>Talk before writing</h3>
+<p>Students explain the idea out loud to a partner first, then write it. Speaking it helps them sort out what they think before they put it on paper.</p>
+<p class="say"><b>Model the step up:</b> everyday (“it got hot”) → teacher (“heat was released”) → expert (“the reaction is exothermic”).</p></div></li>
+<li><div class="num">5</div><div><h3>Model the writing, then fade it</h3>
+<p>Write one answer live in front of the class and explain each choice. Then write one together. Then let them try alone. Give sentence starters at first, and remove them as students grow in confidence.</p>
+<p class="say"><b>Starter:</b> “This shows that … because …”</p></div></li>
+</ol>
+
+<h2 class="sec">Vocabulary card</h2>
+<div class="board" aria-label="Vocabulary card template">
+<div class="top"><h3>WORD CARD</h3><span class="pill">1 word · 3 minutes</span></div>
+<div class="cards">
+<div class="wide"><small>The word</small><span class="blank"></span></div>
+<div><small>Say it</small><span>Break it into sounds or syllables</span></div>
+<div class="r"><small>Kind of word</small><span>Academic / Subject</span></div>
+<div><small>Means</small><span>In my own words …</span></div>
+<div class="r"><small>Word family</small><span>Same root: …, …</span></div>
+<div class="wide"><small>Use it in a sentence about this lesson</small><span class="blank"></span></div>
+</div>
+</div>
+<div class="actions">
+<button class="btn" type="button" onclick="window.print()">Print the card</button>
+<a class="btn ghost" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Share your favourite strategy on LinkedIn</a>
+</div>
+
+<h2 class="sec hide-print">Make it stick</h2>
+<div class="tips">
+<div class="tip"><h3>Do</h3><ul>
+<li>Plan the 3 words when you plan the lesson</li>
+<li>Bring old words back in your starters and questions</li>
+<li>Ask for full answers that use the key word</li>
+<li>Agree the key words with your department</li></ul></div>
+<div class="tip"><h3>Avoid</h3><ul>
+<li>Long word lists that nobody uses again</li>
+<li>Copying definitions from a glossary</li>
+<li>Handing out a text you haven't read aloud yourself</li>
+<li>Marking spelling only, and never meaning</li></ul></div>
+</div>
+
+<div class="src"><b>Sources</b>
+<ol>
+<li>Education Endowment Foundation (2019). <a href="https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/literacy-ks3-ks4" rel="noopener">Improving Literacy in Secondary Schools</a>: Recommendation 1 (prioritise disciplinary literacy across the curriculum) and Recommendation 2 (provide targeted vocabulary instruction in every subject).</li>
+<li>Beck, I. L., McKeown, M. G. and Kucan, L. (2013). <i>Bringing Words to Life</i> (2nd ed.). The three tiers of vocabulary.</li>
+<li>Fleck, A. Literacy in Science for Teachers, Seneca Learning CPD.</li>
+<li>Rosenshine, B. (2012). Principles of Instruction. <i>American Educator</i>: provide models, and guide student practice.</li>
+</ol></div>
+</main>
+
+<footer><div class="wrap">Part of the <a href="index.html">Alashi Teacher Toolkit</a> · Free for every teacher · #AlashiTeacherToolkit</div></footer>
+<script data-goatcounter="https://alashitoolkit.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
