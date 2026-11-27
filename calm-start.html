@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The first 5 minutes: a calm start · Alashi Teacher Toolkit</title>
+<meta name="description" content="Free guide for teachers of any subject: a 5-step entry routine and a Do Now template that start every lesson calmly, before you say a word.">
+<meta property="og:title" content="The first 5 minutes: a calm start that runs itself">
+<meta property="og:description" content="Toolkit #3 · A 5-step entry routine and a printable Do Now template for any subject.">
+<meta property="og:image" content="https://abdulhamidalashi.github.io/thumb-tt03.jpg">
+<link rel="icon" href="avatar-small.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--tile:#F5F5F7;--ink:#1D1D1F;--ink2:#515154;--line:#E3E3E8;--accent:#4B32D6;--pink:#B5307E;--grad:linear-gradient(90deg,#4B32D6 0%,#8B2FC9 50%,#C2307A 100%)}
+@media (prefers-color-scheme:dark){:root{--bg:#0F0F12;--tile:#18181C;--ink:#F5F5F7;--ink2:#B4B4BB;--line:#2A2A31;--accent:#A99BFF;--pink:#FF8FCB;--grad:linear-gradient(90deg,#A99BFF 0%,#D08CFF 50%,#FF8FCB 100%)}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:56px;gap:12px;flex-wrap:wrap;max-width:1080px}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;min-height:44px;display:inline-flex;align-items:center;gap:10px}
+.nav img{width:28px;height:28px;border-radius:50%}
+.nav .cta{color:var(--accent)}
+.head{text-align:center;padding:56px 0 36px}
+.eyebrow{font-weight:600;color:var(--pink);font-size:17px;margin-bottom:10px}
+.head h1{font-size:clamp(40px,7vw,72px);margin-bottom:16px}
+.head h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.head p{color:var(--ink2);font-size:20px;max-width:620px;margin:0 auto}
+.why{background:var(--tile);border-radius:24px;padding:26px 30px;margin-bottom:40px}
+.why b{color:var(--ink)}
+.why p{margin:0;color:var(--ink2)}
+h2.sec{font-size:clamp(28px,4vw,36px);margin:0 0 20px}
+.steps{list-style:none;margin:0 0 48px;padding:0;display:flex;flex-direction:column;gap:16px}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:22px 24px;border:1px solid var(--line);border-radius:20px}
+.num{width:52px;height:52px;border-radius:50%;background:var(--grad);color:#fff;font-family:"Inter Tight",Inter,sans-serif;font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center}
+@media (prefers-color-scheme:dark){.num{color:#0F0F12}}
+.steps h3{font-size:23px;margin:4px 0 6px}
+.steps p{margin:0 0 6px;color:var(--ink2)}
+.steps .say{margin:8px 0 0;font-size:15px;color:var(--ink);background:var(--tile);border-radius:12px;padding:10px 14px}
+.steps .say b{color:var(--accent)}
+.board{background:#000;color:#F5F5F7;border-radius:28px;padding:34px 36px;margin-bottom:16px}
+.board .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.board h3{font-size:36px}
+.pill{background:#F5F5F7;color:#000;border-radius:999px;padding:6px 16px;font-weight:600;font-size:15px}
+.q{display:grid;grid-template-columns:34px 1fr;gap:12px;border-top:1px solid #2C2C2E;padding:18px 0}
+.q .n{font-family:"Inter Tight",Inter,sans-serif;font-weight:800;font-size:26px;color:#B6A9FF}
+.q small{display:block;font-weight:700;letter-spacing:.12em;font-size:13px;color:#A1A1A6;text-transform:uppercase}
+.q span{font-size:20px}
+.board .done{border-top:1px solid #2C2C2E;padding-top:16px;color:#A1A1A6}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn{font:inherit;font-weight:600;min-height:48px;padding:12px 24px;border-radius:999px;border:0;cursor:pointer;font-size:17px;background:var(--accent);color:#fff;text-decoration:none;display:inline-flex;align-items:center}
+@media (prefers-color-scheme:dark){.btn{color:#0F0F12}}
+.btn.ghost{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.tips{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
+.tip{background:var(--tile);border-radius:20px;padding:22px 24px}
+.tip h3{font-size:20px;margin-bottom:8px}
+.tip ul{margin:0;padding-left:20px;color:var(--ink2)}
+.tip li{margin:4px 0}
+.src{font-size:14px;color:var(--ink2);border-top:1px solid var(--line);padding-top:20px;margin-bottom:40px}
+.src ol{padding-left:20px;margin:8px 0 0}
+footer{border-top:1px solid var(--line);color:var(--ink2);padding:24px 0;font-size:14px}
+footer a{color:var(--ink)}
+@media (max-width:700px){.tips{grid-template-columns:1fr}.steps li{grid-template-columns:1fr}.board{padding:26px 22px}}
+@media print{.nav,.actions,footer,.head p,.why,.steps,.tips,.src,h2.sec.hide-print{display:none!important}body{background:#fff}.board{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a href="index.html"><img src="avatar-small.jpg" alt="" width="28" height="28">Alashi Teacher Toolkit</a>
+<a class="cta" href="index.html#library">More free guides ›</a>
+</div></header>
+
+<main class="wrap">
+<div class="head">
+<div class="eyebrow">Toolkit #3 · Behaviour · Any subject</div>
+<h1>The first <span>5 minutes.</span></h1>
+<p>A calm start that runs itself: five steps, one Do Now template, and the research behind them.</p>
+</div>
+
+<div class="why">
+<p><b>Why it matters.</b> The start of a lesson sets the tone for the rest of it. When students know exactly what to do as they walk in, learning starts before you say a word, and you avoid the “settle down…” loop. The EEF recommends simple, consistent classroom routines, taught explicitly, as one of the most practical ways to improve behaviour.</p>
+</div>
+
+<h2 class="sec hide-print">The 5-step routine</h2>
+<ol class="steps">
+<li><div class="num">1</div><div><h3>Meet them at the door</h3>
+<p>Stand at the door. Greet each student by name, with a smile or a nod. Add a short reminder for anyone who needs it.</p>
+<p class="say"><b>Say:</b> “Good morning. Do Now is on the board.”</p></div></li>
+<li><div class="num">2</div><div><h3>Same Do Now, same place</h3>
+<p>Have the Do Now on the board before students arrive, in the same place every lesson. They should be able to start without asking what to do.</p>
+<p class="say"><b>Tip:</b> keep a slide titled “Do Now” as slide 1 of every lesson deck.</p></div></li>
+<li><div class="num">3</div><div><h3>3 quick retrieval questions</h3>
+<p>One from last lesson, one from last week, one challenge. No new content: everyone should be able to start. About 4 minutes, working on their own.</p>
+<p class="say"><b>Then:</b> go through the answers in 1 minute. Students check and correct their own.</p></div></li>
+<li><div class="num">4</div><div><h3>Teach the routine like content</h3>
+<p>Explain it, model it, let the class practise it, and give feedback. Re-teach it after holidays, or whenever it slips. Routines feel effortless only after they are taught.</p>
+<p class="say"><b>Say:</b> “Let's practise coming in again. Show me what a strong start looks like.”</p></div></li>
+<li><div class="num">5</div><div><h3>Praise out loud, correct quietly</h3>
+<p>Narrate what's going right so everyone hears the expectation. Deal with anyone off task privately, at their desk, with the least fuss.</p>
+<p class="say"><b>Say:</b> “Row 2 have already started question 1. Thank you.”</p></div></li>
+</ol>
+
+<h2 class="sec">Do Now template</h2>
+<div class="board" aria-label="Do Now template">
+<div class="top"><h3>DO NOW</h3><span class="pill">4 min · on your own</span></div>
+<div class="q"><div class="n">1</div><div><small>From last lesson</small><span>What did we learn about … ?</span></div></div>
+<div class="q"><div class="n">2</div><div><small>From last week</small><span>Explain … in one sentence.</span></div></div>
+<div class="q"><div class="n">3</div><div><small>Challenge</small><span>Why does … ? Use a key word.</span></div></div>
+<div class="done">Done early? Title, date, equipment out.</div>
+</div>
+<div class="actions">
+<button class="btn" type="button" onclick="window.print()">Print the template</button>
+<a class="btn ghost" href="https://www.linkedin.com/in/abdulhamid-alashi-0741b1238/" rel="noopener">Share your routine on LinkedIn</a>
+</div>
+
+<h2 class="sec hide-print">Make it stick</h2>
+<div class="tips">
+<div class="tip"><h3>Do</h3><ul>
+<li>Keep the same routine in every lesson, for weeks</li>
+<li>Use a visible timer for the Do Now</li>
+<li>Make question 1 easy, so everyone succeeds early</li>
+<li>Agree the routine with your team, so it's the same across classes</li></ul></div>
+<div class="tip"><h3>Avoid</h3><ul>
+<li>New content in the Do Now</li>
+<li>Talking over students while they work</li>
+<li>Correcting in public when a quiet word works</li>
+<li>Dropping the routine when the class seems settled</li></ul></div>
+</div>
+
+<div class="src"><b>Sources</b>
+<ol>
+<li>Cook, C. R. et al. (2018). Positive Greetings at the Door: Evaluation of a low-cost, high-yield proactive classroom management strategy. <i>Journal of Positive Behavior Interventions</i>, 20(3), 149–159. A randomised trial in middle-school classes: academic engaged time rose by about 20 percentage points.</li>
+<li>Education Endowment Foundation (2019). <a href="https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/behaviour" rel="noopener">Improving Behaviour in Schools</a>, Recommendation 4: use simple approaches as part of your regular routine.</li>
+<li>Lemov, D. (2021). <i>Teach Like a Champion 3.0</i>: Threshold and Strong Start; Do Now.</li>
+<li>Rosenshine, B. (2012). Principles of Instruction. <i>American Educator</i>: begin a lesson with a short review of previous learning.</li>
+</ol></div>
+</main>
+
+<footer><div class="wrap">Part of the <a href="index.html">Alashi Teacher Toolkit</a> · Free for every teacher · #AlashiTeacherToolkit</div></footer>
+<script data-goatcounter="https://alashitoolkit.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
